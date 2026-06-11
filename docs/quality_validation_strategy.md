@@ -11,6 +11,11 @@ The main quality objective is to prove that the firmware can maintain the target
 The firmware periodically reads temperature from an I2C sensor and compares it with a configured target temperature. Based on the error between measured and target temperature, the firmware adjusts fan speed using PWM. The fan tachometer signal is used as closed-loop feedback to confirm that the physical fan response matches the requested PWM level.
 
 High-level control flow:
+The diagram below illustrates the high-level thermal control loop for the embedded thermal control subsystem. It shows how the firmware reads the temperature sensor, calculates the required fan PWM duty cycle, validates tachometer feedback, and enters degraded or safe mode when sensor or fan feedback is invalid.
+
+![High-Level Control Flow – Embedded Thermal Control System](../assets/high_level_control_flow.png)
+
+**Figure 1: High-level firmware control flow for temperature sensing, PWM fan actuation, tachometer feedback validation, and safe-mode handling.**
 
 1. Read temperature from I2C sensor.
 2. Validate sensor reading and detect sensor communication faults.
