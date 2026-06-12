@@ -1,6 +1,11 @@
 # Defect Process
 
 ## 1. Defect Lifecycle
+The diagram below shows the defect life cycle used for this project, covering issue reporting, triage, investigation, verification, closure, and the rework path in case of regression or unresolved issues.
+
+![Defect Life Cycle Workflow](../assets/defect_life_cycle.png)
+
+**Figure 2: Defect life cycle showing defect status flow from New to Closed, including the Reopened and rework path.**
 
 1. **New**: Defect reported by QA, developer, or CI pipeline.
 2. **Triaged**: Severity, priority, owner, and release impact agreed.
