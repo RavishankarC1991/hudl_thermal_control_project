@@ -225,6 +225,45 @@ src
 
 ---
 
+## Run Python Unit Tests
+
+In addition to Robot Framework validation tests, the project also includes Python unit tests under the `tests/` folder. These tests validate the lower-level Python logic used by the Robot Framework keyword layer, including PWM-to-RPM calculation, tolerance validation, and fault classification.
+
+The unit tests are located here:
+
+```text
+tests/
+├── test_pwm_tacho_validation.py
+└── test_fault_handling.py
+```
+
+Run all Python unit tests using Pytest:
+
+```bash
+pytest -v
+```
+
+Expected result:
+
+```text
+19 passed
+```
+
+To run a specific unit test file:
+
+```bash
+pytest -v tests/test_pwm_tacho_validation.py
+```
+
+or:
+
+```bash
+pytest -v tests/test_fault_handling.py
+```
+
+These unit tests are not the primary validation layer for the submission. Robot Framework is the main test automation layer, while Pytest is used as a supporting developer-level test layer for the reusable Python validation logic.
+
+
 ## 9. Run Robot Framework Validation Tests
 
 Robot Framework is the primary test execution layer for this project.
@@ -367,7 +406,8 @@ pip install -r requirements.txt
 export PYTHONPATH=src
 
 ruff check src
-robot -d results/robot robot_tests
+pytest -v  # Pytest Unit Test execution
+robot -d results/robot robot_tests # Firmware Validation Tests
 
 python -m thermal_qa.simulate_faults --scenario normal --pwm 60
 python -m thermal_qa.simulate_faults --scenario stalled_fan --pwm 70
@@ -384,7 +424,8 @@ pip install -r requirements.txt
 $env:PYTHONPATH="src"
 
 ruff check src
-robot -d results/robot robot_tests
+pytest -v # Pytest Unit Test execution
+robot -d results/robot robot_tests # Firmware Validation Tests
 
 python -m thermal_qa.simulate_faults --scenario normal --pwm 60
 python -m thermal_qa.simulate_faults --scenario stalled_fan --pwm 70
