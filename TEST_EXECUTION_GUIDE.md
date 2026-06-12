@@ -26,6 +26,7 @@ The automation focuses on:
 
 | Area | Tool |
 |---|---|
+| Unit Testing | Pytest |
 | Test automation | Robot Framework |
 | Supporting logic | Python |
 | Static code checks | Ruff |
