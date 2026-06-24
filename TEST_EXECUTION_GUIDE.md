@@ -182,6 +182,11 @@ This installs the required packages such as:
 - robotframework
 - ruff
 
+You can also view all installed packages with:
+
+```bash
+python -m pip list
+```
 ---
 
 ## 8. Set Python Path
@@ -262,6 +267,13 @@ or:
 pytest -v tests/test_fault_handling.py
 ```
 
+To open Unit test results in browser:
+```bash
+pip install pytest-html
+pytest -v --html=results/pytest/report.html --self-contained-html
+open results/pytest/report.html
+```
+
 These unit tests are not the primary validation layer for the submission. Robot Framework is the main test automation layer, while Pytest is used as a supporting developer-level test layer for the reusable Python validation logic.
 
 
@@ -293,6 +305,12 @@ Generated report files:
 results/robot/report.html
 results/robot/log.html
 results/robot/output.xml
+```
+
+To open robot test results in browser:
+```bash
+open results/robot/report.html
+open results/robot/log.html # Detailed execution logs
 ```
 
 ---
