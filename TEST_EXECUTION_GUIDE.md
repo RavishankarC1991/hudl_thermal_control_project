@@ -314,7 +314,9 @@ open results/robot/log.html # Detailed execution logs
 ```
 
 To Open individual logs from report.html in browser
-# When the HTML files are opened directly using a file:// path, some browsers may block navigation from report.html to log.html, especially when the project is stored in iCloud Drive.
+
+When the HTML files are opened directly using a file:// path, some browsers may block navigation from report.html to log.html, especially when the project is stored in iCloud Drive.
+
 From the project root, run:
 ```bash
 python3 -m http.server 8000
