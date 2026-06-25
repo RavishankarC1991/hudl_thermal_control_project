@@ -313,6 +313,24 @@ open results/robot/report.html
 open results/robot/log.html # Detailed execution logs
 ```
 
+To Open individual logs from report.html in browser
+# When the HTML files are opened directly using a file:// path, some browsers may block navigation from report.html to log.html, especially when the project is stored in iCloud Drive.
+From the project root, run:
+```bash
+python3 -m http.server 8000
+```
+Expected output:
+
+Serving HTTP on 0.0.0.0 port 8000
+
+Then open the Robot Framework report in the browser:
+
+http://localhost:8000/results/robot/report.html
+
+To stop the local server, return to the terminal and press:
+
+Ctrl + C
+
 ---
 
 ## 10. Open Robot Framework Test Report
